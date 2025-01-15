@@ -1,101 +1,448 @@
+"use client";
+import Footer from "@/components/Footer";
+import Header from "@/components/Navbar";
+import CustomersAndPartners from "@/components/CustomersAndPartners";
+
+
+import Head from "next/head";
+
+import { useEffect, useState, useRef, TouchEvent } from "react";
+import { useRouter } from "next/router";
+import Palatte from "../common/Palatte";
+import BlogCard from "@/components/BlogCard";
 import Image from "next/image";
+
+// import "intersection-observer";
+
+import { useAuth } from "@/common/authProvider";
+
+import * as React from "react";
+
+import { Roboto, Lato } from "next/font/google";
+
+import HeroSection from "@/components/HeroSection";
+import Switcher from "@/components/Switcher";
+import HowItWorks from "@/components/howtowork";
+import Features from "@/components/Features";
+import IndustrySolutions, {
+  IndustryPreview,
+} from "@/components/IndustrySolutions";
+import VideoSection from "@/components/VideoSection";
+import $vgLogo, { _Cross, _Tick } from "@/components/DesignElements/_Logo-svg";
+import {
+  Box,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
+import LogoBar from "@/components/LogoBar";
+import _Line, { _VerticalLine } from "../components/DesignElements/_Line";
+import { HeroBlob } from "../components/HeroSection";
+import {
+  DefectDetection,
+  ObjectDetection,
+  AnomalyDetection,
+  ObjectCounting,
+  Completeness,
+  TextIdentification,
+  Mesuer,
+} from "@/components/DesignElements/Application/ApplicationLines";
+import Link from "next/link";
+
+
+const $_renderation = ({ tt, bt }) => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: {
+          xl: "250px",
+          lg: "250px",
+          md: "250px",
+          sm: "100%",
+          xs: "100%",
+        },
+        height: "100px",
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: "2.4rem",
+          fontWeight: 600,
+          color: "#fff",
+          fontWeight: 600,
+        }}
+        className="_layer-blur"
+      >
+        {tt}
+      </Typography>
+      <Typography
+        sx={{
+          fontSize: "1.2rem",
+          fontWeight: 400,
+          color: "#fff",
+          textAlign: "center",
+          fontWeight: 600,
+        }}
+      >
+        {bt}
+      </Typography>
+    </Box>
+  );
+};
+
+
+const ApplicationNew = () => {
+  const categories = [
+    {
+      number: "01",
+      label: "Defect Detection",
+      video: "/Application/Media/DefectDetection.mp4",
+    },
+    {
+      number: "02",
+      label: "Object Detection",
+      video: "/Application/Media/OD new.mp4",
+    },
+    {
+      number: "03",
+      label: "Anomaly Detection",
+      video: "/Application/Media/AnomalyDetection.mp4",
+    },
+    {
+      number: "04",
+      label: "Object Counting",
+      video: "/Application/Media/ObjectCounting.mp4",
+    },
+    {
+      number: "05",
+      label: "Completeness Check",
+      video: "/Application/Media/Complet.mp4",
+    },
+    {
+      number: "06",
+      label: "Text Identification",
+      video: "/Application/Media/TextIdentification.mp4",
+    },
+    {
+      number: "07",
+      label: "Measurement",
+      video: "/Application/Media/Measurement.mp4",
+    },
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Autoplay failed, waiting for user interaction.");
+      });
+    }
+  }, [selectedCategory]);
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  // Use effect to detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640); // Tailwind 'sm' breakpoint is at 640px
+    };
+
+    // Set the initial screen size when the component mounts
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener when component unmounts
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // const blogsToDisplay = isSmallScreen ? blogsData.slice(0, 1) : blogsData;
+
+
+  return (
+    <>
+      <div className="bg-white sm:rounded-3xl">
+        <h1 className=" pb-0 pt-10 sm:py-10  mt-28 mb-[-4px] font-extralight text-4xl md:text-5xl lg:text-6xl text-center  text-black bg-white sm:rounded-3xl">
+          Application
+        </h1>
+        <div
+          className="sm:rounded-3xl bg-white text-black flex justify-between py-16 sm:py-24 mt-10 sm:mt-0 min-[2300px]:w-[60%] min-[2300px]:mx-auto relative"
+          // style={{ background: "rgba(15, 15, 15, 0.30)" }}
+        >
+          {/* Left Component */}
+          <div className="flex sm:flex-col ml-4 sm:ml-20 sm:w-[30%] font-black z-20 gap-2 sm:gap-0 mt-[-50px] sm:mt-0">
+            <h1 className="text-xl sm:text-4xl lg:text-5xl 2xl:text-6xl min-[1900px]:text-7xl">
+              {selectedCategory.number}
+            </h1>
+            <h1 className="mt-1 sm:mt-0 sm:w-1/2 text-[15px] sm:text-3xl lg:text-4xl 2xl:text-5xl min-[1900px]:text-6xl min-[2300px]:text-5xl">
+              {selectedCategory.label.toUpperCase()}
+            </h1>
+          </div>
+
+          {/* Middle Component */}
+          <div className="pointer-events-none flex items-center justify-center w-[100%] sm:w-[60%]  sm:mt-0 ml-[-170px] sm:ml-[-150px] absolute sm:relative left-[102px] sm:left-0">
+            <video
+               ref={videoRef}
+              key={selectedCategory.video}
+              src={selectedCategory.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+                 preload="auto"
+              className="w-full h-auto pointer-events-none"
+            />
+          </div>
+
+          {/* Right Component */}
+          <div className="flex justify-end text-[10px] sm:text-lg lg:text-xl 2xl:text-[27px] z-40">
+            <div className="flex flex-col gap-4 sm:gap-10 lg:gap-14">
+              {categories.map((category) => (
+                <div
+                  key={category.number}
+                  className={`flex gap-4 cursor-pointer items-center `}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  <h2
+                    className={`text-right w-[75%] transition-all duration-300 ${
+                      selectedCategory.number === category.number
+                        ? "-translate-x-1 sm:-translate-x-8 font-bold"
+                        : ""
+                    }`}
+                  >
+                    {category.label}
+                  </h2>
+                  {/* <Image
+                src="/Application/Animation/ALine.svg"
+                width={100}
+                height={0}
+              /> */}
+                  <div
+                    className={`h-[1px] bg-black transition-all duration-300 ${
+                      selectedCategory.number === category.number
+                        ? "w-[45px] sm:w-[200px] h-[2px]"
+                        : "w-[30px] sm:w-[100px]"
+                    }`}
+                  ></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div >
+      <Header />
+      <HeroSection />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <Box
+          sx={{
+            display: "flex",
+            background: 'url("/_Background-elements/_Partners-bg.png")',
+            width: "100%",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            padding: "1rem",
+            fontSize: "2rem",
+            padding: "2rem 0 0 0",
+            display: "flex",
+            alignItems: "flex-start",
+            width: "100%",
+            justifyContent: "center",
+            flexDirection: {
+              xs: "column",
+              md: "column",
+              lg: "row",
+              xl: "row",
+            },
+          }}
+        >
+          <div
+            className=" text-[26px] font-light hidden lg:block"
+            style={{
+              webkitTextStrokeWidth: "0.5px",
+              WebkitTextStrokeColor: "#fff",
+              marginTop: "0.5rem",
+              marginRight: "0.5rem",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Trusted By
+          </div>
+          <LogoBar
+            sx={{
+              width: {
+                xl: "80%",
+                lg: "80%",
+                md: "100%",
+                sm: "100%",
+                xs: "100%",
+              },
+              background: "transparent",
+              backgroundColor: "transparent",
+              paddingBottom: "24px",
+            }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            background: "inherit",
+            py: "2rem",
+            px: "5rem",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              width: {
+                xl: "87%",
+                lg: "87%",
+                md: "100%",
+                sm: "100%",
+                xs: "100%",
+              },
+              alignItems: {
+                xl: "center",
+                lg: "center",
+                md: "center",
+                sm: "flex-start",
+                xs: "flex-start",
+              },
+              justifyContent: "space-between",
+              flexDirection: {
+                xl: "row",
+                lg: "row",
+                md: "row",
+                sm: "row",
+                xs: "row",
+              },
+              gap: {
+                xl: 0,
+                lg: 0,
+                md: 0,
+                sm: "1rem",
+                xs: "1rem",
+              },
+              flexWrap: {
+                xs: "wrap",
+              },
+            }}
           >
-            Read our docs
-          </a>
+            {[
+              { tt: "0%", bt: "AI Expertise Required " },
+              { tt: "99.99%", bt: "Reduce Recall" },
+              { tt: "75%", bt: "Lower Total Cost" },
+              { tt: "100%", bt: "Risk Free Investment" },
+            ].map(({ tt, bt }, $Key) => (
+              <$_renderation {...{ tt, bt }} key={$Key} />
+            ))}
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(15, 15, 15, 0.30)",
+            minHeight: "405px",
+            width: "100%",
+            position: "relative",
+          }}
+        >
+          <Image
+            src="/HiW/a.svg"
+            width={200}
+            height={244}
+            className="absolute z-40 top-[-190px] left-0 hidden 2xl:block "
+          />
+          <Image
+            src="/HiW/ballBig.svg"
+            width={120}
+            height={120}
+            className="absolute z-40 top-[-60px] right-[60px] min-[2300px]:right-[100px] hidden 2xl:block "
+          />
+          <h6
+            style={{
+              color: "#fff",
+              fontWeight: 400,
+              textAlign: "center",
+              margin: "1rem 0",
+            }}
+            className="text-2xl md:text-[3rem] sm:text-[2.5rem] xs:text-[1.3rem] lg:text-[50px] xl:text-[71px]"
+          >
+            Transform Quality Inspection{" "}
+          </h6>
+          <p
+            style={{
+              color: "#fff",
+
+              fontWeight: 300,
+            }}
+            className="text-center leading-6 lg:leading-8 text-base w-[80%] md:w-[60%] mt-6 md:text-[1.2rem] sm:text-[1rem] xs:text-[1rem] lg:text-[1.2rem] xl:text-[27px]"
+          >
+            With state-of-the-art that enables industries to accurately identify
+            defects and anomalies in split second, executing everything in
+            runtime. A perfect solution for a high pace production industry
+            looking to improve and automate their visual quality inspection
+          </p>
+        </Box>
+
+
+        <ApplicationNew />
+        <IndustryPreview />
+        <div
+          className="py-16"
+          style={{
+            background: "rgba(15, 15, 15, 0.30)",
+            height: "100%",
+          }}
+        >
+          <h1 className="my-12 font-light text-4xl md:text-5xl lg:text-6xl text-center  ">
+            Blogs
+          </h1>
+          {/* <BlogCard data={blogsToDisplay} isPreview={true} /> */}
+
+          <Link href="/blogs">
+            <div className="py-2 px-2 rounded-3xl _static-button-animated mt-12 w-[32%] sm:w-[18%] lg:w-[12%] 2xl:w-[8%] m-auto text-center">
+              See More
+            </div>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+
+
+        <CustomersAndPartners />
+
+    <Footer />
     </div>
   );
 }
