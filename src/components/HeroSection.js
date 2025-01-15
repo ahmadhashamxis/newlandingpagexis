@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
-import LogoBar from "./LogoBar";
+
 import { Box } from "@mui/material";
-import Btn from "./DesignElements/Btn";
+
 
 const HeroBlob = ({ sx = {} }) => {
   return (
@@ -23,14 +23,6 @@ const HeroBlob = ({ sx = {} }) => {
 };
 
 const HeroSection = () => {
-  const gradientStyleMain = {
-    background:
-      "linear-gradient(0deg, rgba(62, 95, 170, 0.25) 0%, rgba(48, 20, 102, 0.25) 193.33%)",
-  };
-
-  const gradientStyle = {
-    background: "rgba(255, 255, 255, 0.1)",
-  };
 
   const choices = ["Private", "End-to-End", "Accessible", "Simple"];
   const choicesLength = choices.length;

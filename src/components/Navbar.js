@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import { Box } from "@mui/material";
 import { CloseOutlined } from "@mui/icons-material";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const Header = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -28,10 +28,7 @@ const Header = () => {
     };
   }, []);
 
-  const gradientStyleMain = {
-    background:
-      "linear-gradient(180deg, rgba(48, 20, 102, 0.25) 0%, rgba(62, 95, 170, 0.25) 100%)",
-  };
+
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -126,6 +123,7 @@ const Header = () => {
                   src="/navhand.svg"
                   width={26}
                   height={18}
+                  alt="image"
                   className="mr-1.5 mt-1 hidden xl:flex"
                 />
                 Request A Partnership
@@ -138,6 +136,7 @@ const Header = () => {
                   src="/navtel.svg"
                   width={16}
                   height={16}
+                  alt="image"
                   className="mr-2 hidden xl:flex"
                 />
                 Contact
@@ -165,6 +164,7 @@ const Header = () => {
                   src="/navtel.svg"
                   width={16}
                   height={16}
+                  alt="image"
                   className="mr-2 hidden xl:flex "
                 />
                 Contact Us
@@ -200,7 +200,7 @@ const Header = () => {
               alignItems: "center",
             }}
           >
-            <Image src="/Asset.png" width={90} height={100} alt="" />
+            <Image src="/Asset.png" width={90} height={100} alt="image" />
             <CloseOutlined
               onClick={toggleMobileMenu}
               sx={{ fill: "#fff", fontSize: "2rem" }}

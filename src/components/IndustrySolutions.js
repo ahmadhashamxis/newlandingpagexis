@@ -1,7 +1,7 @@
 import React from "react";
 import IndustryCard from "./IndustryCard";
 import Image from "next/image";
-import { HeroBlob } from "./HeroSection";
+
 // import { useRouter } from "next/router";
 
 const IndustrySolutions = () => {

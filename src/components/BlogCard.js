@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
 import { BASE_URL_STRAPI } from "../common/base_config";
-import DOMPurify from "dompurify";
+
 import Truncate from "react-truncate-html";
 import Link from "next/link";
 import { LazyLoadImage } from "react-lazy-load-image-component";

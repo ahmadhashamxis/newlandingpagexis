@@ -3,59 +3,24 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Navbar";
 import CustomersAndPartners from "@/components/CustomersAndPartners";
 
+import { useEffect, useState, useRef } from "react";
 
-import Head from "next/head";
-
-import { useEffect, useState, useRef, TouchEvent } from "react";
-import { useRouter } from "next/router";
-import Palatte from "../common/Palatte";
-import BlogCard from "@/components/BlogCard";
 import Image from "next/image";
-
-// import "intersection-observer";
-
-import { useAuth } from "@/common/authProvider";
 
 import * as React from "react";
 
-import { Roboto, Lato } from "next/font/google";
-
 import HeroSection from "@/components/HeroSection";
-import Switcher from "@/components/Switcher";
-import HowItWorks from "@/components/howtowork";
-import Features from "@/components/Features";
-import IndustrySolutions, {
-  IndustryPreview,
-} from "@/components/IndustrySolutions";
-import VideoSection from "@/components/VideoSection";
-import $vgLogo, { _Cross, _Tick } from "@/components/DesignElements/_Logo-svg";
-import {
-  Box,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
+import { IndustryPreview } from "@/components/IndustrySolutions";
+
+import { Box, Typography } from "@mui/material";
 import LogoBar from "@/components/LogoBar";
-import _Line, { _VerticalLine } from "../components/DesignElements/_Line";
-import { HeroBlob } from "../components/HeroSection";
-import {
-  DefectDetection,
-  ObjectDetection,
-  AnomalyDetection,
-  ObjectCounting,
-  Completeness,
-  TextIdentification,
-  Mesuer,
-} from "@/components/DesignElements/Application/ApplicationLines";
-import Link from "next/link";
 
+interface RenderationProps {
+  tt: string; // Adjust the type as needed
+  bt: string; // Adjust the type as needed
+}
 
-const $_renderation = ({ tt, bt }) => {
+const $_renderation: React.FC<RenderationProps> = ({ tt, bt }) => {
   return (
     <Box
       sx={{
@@ -77,7 +42,7 @@ const $_renderation = ({ tt, bt }) => {
           fontSize: "2.4rem",
           fontWeight: 600,
           color: "#fff",
-          fontWeight: 600,
+         
         }}
         className="_layer-blur"
       >
@@ -86,7 +51,7 @@ const $_renderation = ({ tt, bt }) => {
       <Typography
         sx={{
           fontSize: "1.2rem",
-          fontWeight: 400,
+       
           color: "#fff",
           textAlign: "center",
           fontWeight: 600,
@@ -97,7 +62,6 @@ const $_renderation = ({ tt, bt }) => {
     </Box>
   );
 };
-
 
 const ApplicationNew = () => {
   const categories = [
@@ -174,7 +138,6 @@ const ApplicationNew = () => {
 
   // const blogsToDisplay = isSmallScreen ? blogsData.slice(0, 1) : blogsData;
 
-
   return (
     <>
       <div className="bg-white sm:rounded-3xl">
@@ -198,14 +161,14 @@ const ApplicationNew = () => {
           {/* Middle Component */}
           <div className="pointer-events-none flex items-center justify-center w-[100%] sm:w-[60%]  sm:mt-0 ml-[-170px] sm:ml-[-150px] absolute sm:relative left-[102px] sm:left-0">
             <video
-               ref={videoRef}
+              ref={videoRef}
               key={selectedCategory.video}
               src={selectedCategory.video}
               autoPlay
               loop
               muted
               playsInline
-                 preload="auto"
+              preload="auto"
               className="w-full h-auto pointer-events-none"
             />
           </div>
@@ -250,176 +213,176 @@ const ApplicationNew = () => {
   );
 };
 
-
 export default function Home() {
   return (
-    <div >
+    <div>
       <Header />
       <HeroSection />
 
       <Box
+        sx={{
+          display: "flex",
+          background: 'url("/_Background-elements/_Partners-bg.png")',
+          width: "100%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          
+          fontSize: "2rem",
+          padding: "2rem 0 0 0",
+        
+          alignItems: "flex-start",
+        
+          justifyContent: "center",
+          flexDirection: {
+            xs: "column",
+            md: "column",
+            lg: "row",
+            xl: "row",
+          },
+        }}
+      >
+        <div
+          className=" text-[26px] font-light hidden lg:block"
+          style={{
+            WebkitTextStrokeWidth: "0.5px",
+            WebkitTextStrokeColor: "#fff",
+            marginTop: "0.5rem",
+            marginRight: "0.5rem",
+          }}
+        >
+          Trusted By
+        </div>
+        <LogoBar
+          sx={{
+            width: {
+              xl: "80%",
+              lg: "80%",
+              md: "100%",
+              sm: "100%",
+              xs: "100%",
+            },
+            background: "transparent",
+            backgroundColor: "transparent",
+            paddingBottom: "24px",
+          }}
+        />
+      </Box>
+
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          background: "inherit",
+          py: "2rem",
+          px: "5rem",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Box
           sx={{
             display: "flex",
-            background: 'url("/_Background-elements/_Partners-bg.png")',
-            width: "100%",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            padding: "1rem",
-            fontSize: "2rem",
-            padding: "2rem 0 0 0",
-            display: "flex",
-            alignItems: "flex-start",
-            width: "100%",
-            justifyContent: "center",
+            width: {
+              xl: "87%",
+              lg: "87%",
+              md: "100%",
+              sm: "100%",
+              xs: "100%",
+            },
+            alignItems: {
+              xl: "center",
+              lg: "center",
+              md: "center",
+              sm: "flex-start",
+              xs: "flex-start",
+            },
+            justifyContent: "space-between",
             flexDirection: {
-              xs: "column",
-              md: "column",
-              lg: "row",
               xl: "row",
+              lg: "row",
+              md: "row",
+              sm: "row",
+              xs: "row",
+            },
+            gap: {
+              xl: 0,
+              lg: 0,
+              md: 0,
+              sm: "1rem",
+              xs: "1rem",
+            },
+            flexWrap: {
+              xs: "wrap",
             },
           }}
         >
-          <div
-            className=" text-[26px] font-light hidden lg:block"
-            style={{
-              webkitTextStrokeWidth: "0.5px",
-              WebkitTextStrokeColor: "#fff",
-              marginTop: "0.5rem",
-              marginRight: "0.5rem",
-            }}
-          >
-            Trusted By
-          </div>
-          <LogoBar
-            sx={{
-              width: {
-                xl: "80%",
-                lg: "80%",
-                md: "100%",
-                sm: "100%",
-                xs: "100%",
-              },
-              background: "transparent",
-              backgroundColor: "transparent",
-              paddingBottom: "24px",
-            }}
-          />
+          {[
+            { tt: "0%", bt: "AI Expertise Required " },
+            { tt: "99.99%", bt: "Reduce Recall" },
+            { tt: "75%", bt: "Lower Total Cost" },
+            { tt: "100%", bt: "Risk Free Investment" },
+          ].map(({ tt, bt }, $Key) => (
+            <$_renderation {...{ tt, bt }} key={$Key} />
+          ))}
         </Box>
+      </Box>
 
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            background: "inherit",
-            py: "2rem",
-            px: "5rem",
-            justifyContent: "center",
-            alignItems: "center",
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(15, 15, 15, 0.30)",
+          minHeight: "405px",
+          width: "100%",
+          position: "relative",
+        }}
+      >
+        <Image
+          src="/HiW/a.svg"
+          width={200}
+          height={244}
+          className="absolute z-40 top-[-190px] left-0 hidden 2xl:block "
+           alt="image"
+        />
+        <Image
+          src="/HiW/ballBig.svg"
+          width={120}
+          height={120}
+          alt="image"
+          className="absolute z-40 top-[-60px] right-[60px] min-[2300px]:right-[100px] hidden 2xl:block "
+        />
+        <h6
+          style={{
+            color: "#fff",
+            fontWeight: 400,
+            textAlign: "center",
+            margin: "1rem 0",
           }}
+          className="text-2xl md:text-[3rem] sm:text-[2.5rem] xs:text-[1.3rem] lg:text-[50px] xl:text-[71px]"
         >
-          <Box
-            sx={{
-              display: "flex",
-              width: {
-                xl: "87%",
-                lg: "87%",
-                md: "100%",
-                sm: "100%",
-                xs: "100%",
-              },
-              alignItems: {
-                xl: "center",
-                lg: "center",
-                md: "center",
-                sm: "flex-start",
-                xs: "flex-start",
-              },
-              justifyContent: "space-between",
-              flexDirection: {
-                xl: "row",
-                lg: "row",
-                md: "row",
-                sm: "row",
-                xs: "row",
-              },
-              gap: {
-                xl: 0,
-                lg: 0,
-                md: 0,
-                sm: "1rem",
-                xs: "1rem",
-              },
-              flexWrap: {
-                xs: "wrap",
-              },
-            }}
-          >
-            {[
-              { tt: "0%", bt: "AI Expertise Required " },
-              { tt: "99.99%", bt: "Reduce Recall" },
-              { tt: "75%", bt: "Lower Total Cost" },
-              { tt: "100%", bt: "Risk Free Investment" },
-            ].map(({ tt, bt }, $Key) => (
-              <$_renderation {...{ tt, bt }} key={$Key} />
-            ))}
-          </Box>
-        </Box>
+          Transform Quality Inspection{" "}
+        </h6>
+        <p
+          style={{
+            color: "#fff",
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(15, 15, 15, 0.30)",
-            minHeight: "405px",
-            width: "100%",
-            position: "relative",
+            fontWeight: 300,
           }}
+          className="text-center leading-6 lg:leading-8 text-base w-[80%] md:w-[60%] mt-6 md:text-[1.2rem] sm:text-[1rem] xs:text-[1rem] lg:text-[1.2rem] xl:text-[27px]"
         >
-          <Image
-            src="/HiW/a.svg"
-            width={200}
-            height={244}
-            className="absolute z-40 top-[-190px] left-0 hidden 2xl:block "
-          />
-          <Image
-            src="/HiW/ballBig.svg"
-            width={120}
-            height={120}
-            className="absolute z-40 top-[-60px] right-[60px] min-[2300px]:right-[100px] hidden 2xl:block "
-          />
-          <h6
-            style={{
-              color: "#fff",
-              fontWeight: 400,
-              textAlign: "center",
-              margin: "1rem 0",
-            }}
-            className="text-2xl md:text-[3rem] sm:text-[2.5rem] xs:text-[1.3rem] lg:text-[50px] xl:text-[71px]"
-          >
-            Transform Quality Inspection{" "}
-          </h6>
-          <p
-            style={{
-              color: "#fff",
+          With state-of-the-art that enables industries to accurately identify
+          defects and anomalies in split second, executing everything in
+          runtime. A perfect solution for a high pace production industry
+          looking to improve and automate their visual quality inspection
+        </p>
+      </Box>
 
-              fontWeight: 300,
-            }}
-            className="text-center leading-6 lg:leading-8 text-base w-[80%] md:w-[60%] mt-6 md:text-[1.2rem] sm:text-[1rem] xs:text-[1rem] lg:text-[1.2rem] xl:text-[27px]"
-          >
-            With state-of-the-art that enables industries to accurately identify
-            defects and anomalies in split second, executing everything in
-            runtime. A perfect solution for a high pace production industry
-            looking to improve and automate their visual quality inspection
-          </p>
-        </Box>
-
-
-        <ApplicationNew />
-        <IndustryPreview />
-        {/* <div
+      <ApplicationNew />
+      <IndustryPreview />
+      {/* <div
           className="py-16"
           style={{
             background: "rgba(15, 15, 15, 0.30)",
@@ -439,10 +402,9 @@ export default function Home() {
         </div>
  */}
 
+      <CustomersAndPartners />
 
-        <CustomersAndPartners />
-
-    <Footer />
+      <Footer />
     </div>
   );
 }

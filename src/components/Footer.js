@@ -10,7 +10,7 @@ import { MdOutlinePhoneIphone } from "react-icons/md";
 import { MdLocalPhone } from "react-icons/md";
 import { IoMail } from "react-icons/io5";
 import { FaMedium } from "react-icons/fa6";
-import { HeroBlob } from "./HeroSection";
+
 
 const Footer = () => {
   const gradientStyle = {
@@ -32,6 +32,7 @@ const Footer = () => {
           // alt="footer rectangle"
           fill
           className="opacity-75"
+          alt="image"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </div>
@@ -48,6 +49,7 @@ const Footer = () => {
                 width={150}
                 height={100}
                 alt="logo"
+                
               />
             </Link>
             <p className="ml-[-10px] sm:ml-[-140px] md:ml-[-100px] lg:ml-[-30px] text-sm md:text-lg ">

@@ -45,6 +45,7 @@ const IndustryCard = ({ data, isPreview = false}) => {
               src={c.path}
               alt={`${c.label} img`}
               fill
+              
               style={{ objectFit: 'cover' }}
               
             />
