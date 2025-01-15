@@ -41,7 +41,7 @@ const Footer = () => {
 
         <div className="flex flex-col lg:flex-row text-gray-300 sm:gap-14 justify-around pb-14 sm:pb-24 relative z-10 ">
           <div className="mb-14 sm:mb-0  flex flex-col gap-2 m-auto lg:m-0 text-center lg:text-left pt-10 sm:pt-0 lg:px-10 xl:p-0 xl:pt-6">
-            <Link href="/">
+            <Link href="https://xis.ai/">
               <Image
                 src="/Asset.png"
                 className="xl:mt-[-60px] "
@@ -110,27 +110,27 @@ const Footer = () => {
           <div className="font-light text-base flex  flex-col text-left md:text-left ml-8 sm:ml-16  sm:m-auto md:m-0 w-1/2 md:w-auto md:flex-row gap-12 md:px-40 lg:px-0">
             <div className="flex flex-col gap-5 text-sm sm:text-base ">
               <div className="  text-lg sm:text-xl ">
-                <Link href="/about" aria-label="About">
+                <Link href="https://xis.ai/about" aria-label="About">
                   About Us
                 </Link>
               </div>
               <Link
                 className="text-[#616161]"
-                href="/impressum"
+                href="https://xis.ai/impressum"
                 aria-label="Impressum"
               >
                 Imprint
               </Link>
               <Link
                 className="text-[#616161]"
-                href="/agb"
+                href="https://xis.ai/agb"
                 aria-label="Terms and Conditions / AGB"
               >
                 Terms and Conditions
               </Link>
               <Link
                 className="text-[#616161]"
-                href="/AGB_en.pdf"
+                href="https://xis.ai/AGB_en.pdf"
                 download="AGB"
                 aria-label="About"
               >
@@ -140,26 +140,26 @@ const Footer = () => {
 
             <div className="flex flex-col gap-5 text-sm sm:text-base">
               <div className=" text-lg sm:text-xl ">
-                <Link href="/certificates" aria-label="Certificates">
+                <Link href="https://xis.ai/certificates" aria-label="Certificates">
                   Certificates
                 </Link>
               </div>
               <Link
                 className="text-[#616161]"
-                href="/cookie"
+                href="https://xis.ai/cookie"
                 aria-label="Cookie Directive"
               >
                 Cookie Directive (EU)
               </Link>
               <Link
                 className="text-[#616161]"
-                href="/privacy"
+                href="https://xis.ai/privacy"
                 aria-label="Privacy"
               >
                 Data Privacy Policy
               </Link>
               <Link
-                href="/dpd_customer_suppler_en.pdf"
+                href="https://xis.ai/dpd_customer_suppler_en.pdf"
                 download="Data/Protection"
                 aria-label="Data/Protection"
                 className="text-[#616161]"
@@ -170,24 +170,24 @@ const Footer = () => {
 
             <div className="flex flex-col gap-5  text-sm sm:text-base">
               <div className=" text-lg sm:text-xl">
-                <Link href="/contact" aria-label="Contact">
+                <Link href="https://xis.ai/contact" aria-label="Contact">
                   Contact Us
                 </Link>
               </div>
               <div className="flex flex-col justify-center gap-5 md:items-center">
-                <Link href="/contact" aria-label="Contact">
+                <Link href="https://xis.ai/contact" aria-label="Contact">
                   <div className="flex md:ml-[-20px] text-[#616161]">
                     <MdOutlinePhoneIphone size={24} color="#616161" /> +49 7045
                     2044 560
                   </div>
                 </Link>
-                <Link href="/contact" aria-label="Contact">
+                <Link href="https://xis.ai/contact" aria-label="Contact">
                   <div className="flex md:ml-[-34px] text-[#616161]">
                     <MdLocalPhone size={24} color="#616161" /> +1 248-843-1760
                   </div>
                 </Link>
 
-                <Link href="/contact" aria-label="Contact">
+                <Link href="https://xis.ai/contact" aria-label="Contact">
                   <div className="flex text-[#616161]">
                     <IoMail size={24} color="#616161" />{" "}
                     <div className="ml-1">contact@xray-lab.com</div>

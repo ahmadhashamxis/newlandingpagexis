@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomersAndPartners = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen mb-20">
+    <div className="flex flex-col items-center  mb-20">
       <h1 className="text-5xl my-10">Our Customers</h1>
       <div className="flex flex-col gap-4 items-center">
         <div className="flex gap-4">

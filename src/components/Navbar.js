@@ -91,12 +91,12 @@ const Header = () => {
             }}
           >
             {[
-              { name: "Home", href: "/" },
-              { name: "Products", href: "/Products" },
-              { name: "Industries", href: "/Industries" },
-              { name: "About Us", href: "/about" },
-              { name: "News & Blogs", href: "/blogs" },
-              { name: "Careers", href: "/Careers" },
+              { name: "Home", href: "https://xis.ai/" },
+              { name: "Products", href: "https://xis.ai/Products/" },
+              { name: "Industries", href: "https://xis.ai/Industries" },
+              { name: "About Us", href: "https://xis.ai/about" },
+              { name: "News & Blogs", href: "https://xis.ai/blogs" },
+              { name: "Careers", href: "https://xis.ai/Careers" },
             ].map((item, index) => (
               <div key={index} className="relative group">
                 <Link href={item.href}>
@@ -118,7 +118,7 @@ const Header = () => {
 
           <div className="hidden sm:flex gap-4">
             <div>
-              <Link href="/Partnership"
+              <Link href="https://xis.ai/Partnership"
              
                 className="py-2 px-4 rounded-3xl md:hidden lg:flex _static-button-animated"
               >
@@ -132,7 +132,7 @@ const Header = () => {
                 </Link>
             </div>
             
-            <Link href="/contact">
+            <Link href="https://xis.ai/contact">
               <div className="py-2 px-2 rounded-3xl _static-button-animated flex">
                 <Image
                   src="/navtel.svg"
@@ -153,7 +153,7 @@ const Header = () => {
             className=" md:hidden cursor-pointer flex gap-4"
           >
             <div className="sm:hidden ">
-            <Link href="/contact">
+            <Link href="https://xis.ai/contact">
               <div
                 className="py-2 px-4 rounded-3xl text-xs flex mt-1"
                 style={{
@@ -224,17 +224,17 @@ const Header = () => {
           >
             <ul className="flex flex-col items-start justify-start w-full font-poppins gap-1">
               <li className="relative items-start justify-start bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/" aria-label="Home">
+                <Link href="https://xis.ai/" aria-label="Home">
                   Home
                 </Link>
               </li>
               <li className="relative items-start justify-start bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/about" aria-label="About">
+                <Link href="https://xis.ai/about" aria-label="About">
                   About Us
                 </Link>
               </li>
               <li className="relative items-start justify-start bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/blogs" aria-label="Blogs">
+                <Link href="https://xis.ai/blogs" aria-label="Blogs">
                   News & Blogs
                 </Link>
               </li>
@@ -249,7 +249,7 @@ const Header = () => {
               </Link> */}
               {/* </li> */}
               <li className="relative items-start justify-start bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/Products" aria-label="Products">
+                <Link href="https://xis.ai/Products" aria-label="Products">
                   Product
                 </Link>
               </li>
@@ -259,17 +259,17 @@ const Header = () => {
                 </Link>
               </li> */}
               <li className="relative items-start justify-start bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/Industries" aria-label="Industries">
+                <Link href="https://xis.ai/Industries" aria-label="Industries">
                   Industries
                 </Link>
               </li>
               <li className="relative items-start justify-start sm:hidden bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/contact" aria-label="Contact">
+                <Link href="https://xis.ai/contact" aria-label="Contact">
                   Contact
                 </Link>
               </li>
               <li className="relative items-start justify-start sm:hidden bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400">
-                <Link href="/Careers" aria-label="Careers">
+                <Link href="https://xis.ai/Careers" aria-label="Careers">
                   Careers
                 </Link>
               </li>
@@ -277,7 +277,7 @@ const Header = () => {
           
                 className="relative items-start justify-start sm:hidden w-full cursor-pointer bg-clip-text  text-transparent bg-gradient-to-r from-white to-gray-400"
               >
-                   <Link href="/Partnership" aria-label="Partnership">
+                   <Link href="https://xis.ai/Partnership" aria-label="Partnership">
                 Request A Partnership
                 </Link>
               </li>

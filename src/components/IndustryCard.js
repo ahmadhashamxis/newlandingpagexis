@@ -11,7 +11,7 @@ const IndustryCard = ({ data, isPreview = false}) => {
   return (
     <div className="flex flex-wrap gap-4 sm:gap-6 justify-center z-40 relative">
       {data.map((c, index) => (
-         <Link passHref={true} href={`/industry/${c.label}`} class>
+         <Link passHref={true} href={`https://xis.ai/industry/${c.label}`} class>
         <div key={index} className={`itest relative cursor-pointer ${
               isPreview ? "grayscale" : ""
             }`}>

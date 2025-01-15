@@ -419,7 +419,7 @@ export default function Home() {
 
         <ApplicationNew />
         <IndustryPreview />
-        <div
+        {/* <div
           className="py-16"
           style={{
             background: "rgba(15, 15, 15, 0.30)",
@@ -429,7 +429,7 @@ export default function Home() {
           <h1 className="my-12 font-light text-4xl md:text-5xl lg:text-6xl text-center  ">
             Blogs
           </h1>
-          {/* <BlogCard data={blogsToDisplay} isPreview={true} /> */}
+          <BlogCard data={blogsToDisplay} isPreview={true} />
 
           <Link href="/blogs">
             <div className="py-2 px-2 rounded-3xl _static-button-animated mt-12 w-[32%] sm:w-[18%] lg:w-[12%] 2xl:w-[8%] m-auto text-center">
@@ -437,7 +437,7 @@ export default function Home() {
             </div>
           </Link>
         </div>
-
+ */}
 
 
         <CustomersAndPartners />
