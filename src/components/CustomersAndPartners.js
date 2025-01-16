@@ -5,7 +5,7 @@ const CustomersAndPartners = () => {
     <div className="flex flex-col items-center  mb-20">
       <h1 className="text-5xl my-10">Our Customers</h1>
       <div className="flex flex-col gap-4 items-center">
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           <img src="asset/Group 54.svg" width="150px" alt="" />
           <img src="asset/Group 56.svg" width="150px" alt="" />
           <img src="asset/Group 58.svg" width="150px" alt="" />
@@ -15,7 +15,7 @@ const CustomersAndPartners = () => {
           <img src="asset/Group 62.svg" width="150px" alt="" />
           <img src="asset/Group 63.svg" width="150px" alt="" />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           <img src="asset/Group 64.svg" width="150px" alt="" />
           <img src="asset/Group 67.svg" width="150px" alt="" />
           <img src="asset/Group 68.svg" width="150px" alt="" />
@@ -25,13 +25,13 @@ const CustomersAndPartners = () => {
           <img src="asset/5.svg" width="150px" alt="" />
           <img src="asset/6.svg" width="150px" alt="" />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           <img src="asset/7.svg" width="150px" alt="" />
           <img src="asset/8.svg" width="150px" alt="" />
         </div>
         <div className="mt-10">
           <h1 className="text-5xl my-10 text-center">Our Partners</h1>
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-4 justify-center flex-wrap">
             <img src="asset/Group 95.svg" width="150px" alt="" />
             <img src="asset/Group 96.svg" width="150px" alt="" />
             <img src="asset/Group 98.svg" width="150px" alt="" />
